@@ -14,6 +14,15 @@
 		640F0CD61AFAA5030016232D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 640F0CD51AFAA5030016232D /* Images.xcassets */; };
 		640F0CD91AFAA5030016232D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640F0CD71AFAA5030016232D /* LaunchScreen.xib */; };
 		640F0CE51AFAA5030016232D /* Chinese_PokerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F0CE41AFAA5030016232D /* Chinese_PokerTests.m */; };
+		640F0CF21AFADAE00016232D /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F0CF11AFADAE00016232D /* Card.m */; };
+		640F0CF61AFB01120016232D /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F0CF51AFB01120016232D /* Deck.m */; };
+		640F0CF91AFB08A40016232D /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F0CF81AFB08A40016232D /* PlayingCard.m */; };
+		640F0D2E1AFB22800016232D /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 640F0D2D1AFB22800016232D /* PlayingCardDeck.m */; };
+		64231CE31AFD035F00DABBAD /* ChinesePokerGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CE21AFD035F00DABBAD /* ChinesePokerGame.m */; };
+		64231CE61AFD0AA600DABBAD /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CE51AFD0AA600DABBAD /* Player.m */; };
+		64231CE91AFEC58A00DABBAD /* Turns.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CE81AFEC58A00DABBAD /* Turns.m */; };
+		64231CEC1AFEC6A100DABBAD /* GameRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CEB1AFEC6A100DABBAD /* GameRound.m */; };
+		64907A331AFFF60C002FE6D0 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = 64907A321AFFF60C002FE6D0 /* Play.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +49,24 @@
 		640F0CDE1AFAA5030016232D /* Chinese PokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chinese PokerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		640F0CE31AFAA5030016232D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		640F0CE41AFAA5030016232D /* Chinese_PokerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Chinese_PokerTests.m; sourceTree = "<group>"; };
+		640F0CF01AFADAE00016232D /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		640F0CF11AFADAE00016232D /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		640F0CF41AFB01120016232D /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		640F0CF51AFB01120016232D /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		640F0CF71AFB08A40016232D /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCard.h; sourceTree = "<group>"; };
+		640F0CF81AFB08A40016232D /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCard.m; sourceTree = "<group>"; };
+		640F0D2C1AFB22800016232D /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayingCardDeck.h; sourceTree = "<group>"; };
+		640F0D2D1AFB22800016232D /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayingCardDeck.m; sourceTree = "<group>"; };
+		64231CE11AFD035F00DABBAD /* ChinesePokerGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinesePokerGame.h; sourceTree = "<group>"; };
+		64231CE21AFD035F00DABBAD /* ChinesePokerGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinesePokerGame.m; sourceTree = "<group>"; };
+		64231CE41AFD0AA600DABBAD /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		64231CE51AFD0AA600DABBAD /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		64231CE71AFEC58A00DABBAD /* Turns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Turns.h; sourceTree = "<group>"; };
+		64231CE81AFEC58A00DABBAD /* Turns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Turns.m; sourceTree = "<group>"; };
+		64231CEA1AFEC6A100DABBAD /* GameRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRound.h; sourceTree = "<group>"; };
+		64231CEB1AFEC6A100DABBAD /* GameRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRound.m; sourceTree = "<group>"; };
+		64907A311AFFF60C002FE6D0 /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
+		64907A321AFFF60C002FE6D0 /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Play.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +108,12 @@
 		640F0CC71AFAA5030016232D /* Chinese Poker */ = {
 			isa = PBXGroup;
 			children = (
-				640F0CCC1AFAA5030016232D /* AppDelegate.h */,
-				640F0CCD1AFAA5030016232D /* AppDelegate.m */,
 				640F0CCF1AFAA5030016232D /* ViewController.h */,
 				640F0CD01AFAA5030016232D /* ViewController.m */,
 				640F0CD21AFAA5030016232D /* Main.storyboard */,
 				640F0CD51AFAA5030016232D /* Images.xcassets */,
 				640F0CD71AFAA5030016232D /* LaunchScreen.xib */,
+				640F0CF31AFADB930016232D /* Models */,
 				640F0CC81AFAA5030016232D /* Supporting Files */,
 			);
 			path = "Chinese Poker";
@@ -96,6 +122,8 @@
 		640F0CC81AFAA5030016232D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				640F0CCC1AFAA5030016232D /* AppDelegate.h */,
+				640F0CCD1AFAA5030016232D /* AppDelegate.m */,
 				640F0CC91AFAA5030016232D /* Info.plist */,
 				640F0CCA1AFAA5030016232D /* main.m */,
 			);
@@ -117,6 +145,31 @@
 				640F0CE31AFAA5030016232D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		640F0CF31AFADB930016232D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				640F0CF01AFADAE00016232D /* Card.h */,
+				640F0CF11AFADAE00016232D /* Card.m */,
+				64231CE11AFD035F00DABBAD /* ChinesePokerGame.h */,
+				64231CE21AFD035F00DABBAD /* ChinesePokerGame.m */,
+				64231CE71AFEC58A00DABBAD /* Turns.h */,
+				64231CE81AFEC58A00DABBAD /* Turns.m */,
+				64231CEA1AFEC6A100DABBAD /* GameRound.h */,
+				64907A311AFFF60C002FE6D0 /* Play.h */,
+				64907A321AFFF60C002FE6D0 /* Play.m */,
+				64231CEB1AFEC6A100DABBAD /* GameRound.m */,
+				640F0CF41AFB01120016232D /* Deck.h */,
+				640F0CF51AFB01120016232D /* Deck.m */,
+				640F0CF71AFB08A40016232D /* PlayingCard.h */,
+				640F0CF81AFB08A40016232D /* PlayingCard.m */,
+				64231CE41AFD0AA600DABBAD /* Player.h */,
+				64231CE51AFD0AA600DABBAD /* Player.m */,
+				640F0D2C1AFB22800016232D /* PlayingCardDeck.h */,
+				640F0D2D1AFB22800016232D /* PlayingCardDeck.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +272,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64231CE91AFEC58A00DABBAD /* Turns.m in Sources */,
+				640F0CF91AFB08A40016232D /* PlayingCard.m in Sources */,
+				640F0CF61AFB01120016232D /* Deck.m in Sources */,
+				64231CEC1AFEC6A100DABBAD /* GameRound.m in Sources */,
 				640F0CD11AFAA5030016232D /* ViewController.m in Sources */,
 				640F0CCE1AFAA5030016232D /* AppDelegate.m in Sources */,
+				640F0D2E1AFB22800016232D /* PlayingCardDeck.m in Sources */,
 				640F0CCB1AFAA5030016232D /* main.m in Sources */,
+				640F0CF21AFADAE00016232D /* Card.m in Sources */,
+				64231CE61AFD0AA600DABBAD /* Player.m in Sources */,
+				64231CE31AFD035F00DABBAD /* ChinesePokerGame.m in Sources */,
+				64907A331AFFF60C002FE6D0 /* Play.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +480,7 @@
 				640F0CEA1AFAA5030016232D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		640F0CEB1AFAA5030016232D /* Build configuration list for PBXNativeTarget "Chinese PokerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +489,7 @@
 				640F0CED1AFAA5030016232D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

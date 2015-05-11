@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>29CE9874-E26A-45DA-AFB5-238640CA6790</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Chinese Poker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>DC75E70B01F92E8A90957F85F0AE6ECB3C3AC82A</key>
+		<string>https://github.com/wtchang92/ChinesePoker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Chinese Poker.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>DC75E70B01F92E8A90957F85F0AE6ECB3C3AC82A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wtchang92/ChinesePoker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DC75E70B01F92E8A90957F85F0AE6ECB3C3AC82A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DC75E70B01F92E8A90957F85F0AE6ECB3C3AC82A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Chinese%20Poker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

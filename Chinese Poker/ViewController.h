@@ -11,5 +11,10 @@
 @interface ViewController : UIViewController
 
 
+//@property (weak, nonatomic) IBOutlet UILabel *testDisplay;
+
+@property (weak, nonatomic) IBOutlet UIButton *cardInHand;
+
+
 @end
 
