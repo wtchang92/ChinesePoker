@@ -22,10 +22,17 @@
 - (void) dealHandToPlayers;
 
 - (void) startRound;
+- (void) moveTurnInRound;
+
+- (void) enterPlayToGame: (Player *)player;
 
 
-- (void)addCardsToPile:(NSArray *)cardsToAdd atTop:(BOOL)atTop;
-- (void)addCardsToPile:(NSArray *)cardsToAdd;
+- (void)addCardsToPile:(NSMutableArray *)cardsToAdd atTop:(BOOL)atTop;
+- (void)addCardsToPile:(NSMutableArray *)cardsToAdd;
+
+- (void)addPlayToPile:(Play *)playToAdd atTop:(BOOL)atTop;
+- (void)addPlayToPile:(Play *)playToAdd;
+- (NSString *)showPileTop;
 
 
 - (NSMutableArray *) showPlayers;

@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsInHandOtherPlayer2;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsInHandOtherPlayer3;
 
+@property (weak, nonatomic) IBOutlet UILabel *pile;
 
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) ChinesePokerGame * game;
@@ -48,16 +49,115 @@
 
 }
 
+
+
 - (IBAction)startRound:(UIButton *)sender {
     [self.game startRound];
+    NSLog(@"%@", [self.game testShowRoundOrder]);
+    [self updateUI];
 }
 
 
 
 - (IBAction)chooseCard:(UIButton *)sender {
+    NSUInteger playerIndex;
+    NSUInteger playerchosenCardIndex;
+    if ([self.cardsInHand containsObject:sender] ) {
+        playerIndex= 0;
+        playerchosenCardIndex = (NSUInteger)[sender.restorationIdentifier integerValue];
+    }
+    else if ([self.cardsInHandOtherPlayer1 containsObject:sender] ) {
+        playerIndex = 1;
+        playerchosenCardIndex = ((NSUInteger)[sender.restorationIdentifier integerValue])-13;
+    }
+    else if ([self.cardsInHandOtherPlayer2 containsObject:sender] ) {
+        playerIndex = 2;
+        playerchosenCardIndex = ((NSUInteger)[sender.restorationIdentifier integerValue])-26;
+    }
+    else {
+        playerIndex = 3;
+        playerchosenCardIndex = ((NSUInteger)[sender.restorationIdentifier integerValue])-39;
+    }
+    
+    
+    //NSUInteger chosenIndex = (NSUInteger)[sender.restorationIdentifier integerValue];
+    NSLog(@"%lu", (unsigned long)playerchosenCardIndex);
+    Player *player = [[self.game showPlayers] objectAtIndex:playerIndex];
+    Card *card = [player.hand objectAtIndex:playerchosenCardIndex];
+    
+    if (card.isChosen) {
+        card.chosen = NO;
+    } else {
+        card.chosen = YES;
+    }
+    
+    if (card.isChosen) {
+        NSLog(@"Card is chosen");
+    } else {
+        NSLog(@"Card is now not chosen");
+    }
+}
+
+
+- (IBAction)makePlay:(UIButton *)sender {
+    NSUInteger playerIndex = (NSUInteger)[sender.restorationIdentifier integerValue];
+    NSLog(@"the player making the play has an index number of: %lu", playerIndex);
+    
+    Player *player = [[self.game showPlayers] objectAtIndex:playerIndex];
+    NSLog(@"this player is: %@", player);
+    NSLog(@"the player has a status of %lu", (unsigned long)player.playerStatus);
+    [self.game enterPlayToGame:player];
+    [self updateUI];
     
 }
 
+- (void) updateUI {
+    
+    for (NSUInteger i = 0; i < [[self.game showPlayers] count]; i++) {
+        switch (i) {
+            case 0:
+                [self updatePlayerAction:self.playerAction forPlayer:([[self.game showPlayers] objectAtIndex:i])];
+                break;
+            case 1:
+                [self updatePlayerAction:self.player1Action forPlayer:([[self.game showPlayers] objectAtIndex:i])];
+                break;
+            case 2:
+                [self updatePlayerAction:self.player2Action forPlayer:([[self.game showPlayers] objectAtIndex:i])];
+                break;
+            case 3:
+                [self updatePlayerAction:self.player3Action forPlayer:([[self.game showPlayers] objectAtIndex:i])];
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+    
+    self.pile.text = [self.game showPileTop];
+
+}
+
+- (void) updatePlayerAction: (UIButton *) actionButton forPlayer: (Player *) player {
+    
+    switch (player.playerStatus) {
+        case (Status)isAtTurn:
+            [actionButton setBackgroundColor: [UIColor greenColor]];
+            actionButton.enabled = YES;
+            break;
+        case (Status)standBy:
+            [actionButton setBackgroundColor: [UIColor purpleColor]];
+            actionButton.enabled = NO;
+            break;
+        case (Status)passed:
+            [actionButton setBackgroundColor: [UIColor redColor]];
+            actionButton.enabled = NO;
+            break;
+        default:
+            break;
+    }
+
+}
 
 
 
@@ -82,6 +182,7 @@
     
         [[self.cardsInHand objectAtIndex: count++] setTitle:card.contents forState:UIControlStateNormal];
     }
+    
     Player * player1 = [[self.game showPlayers] objectAtIndex:1];
     int count1 = 0;
     for (Card *card in player1.hand) {
@@ -103,7 +204,7 @@
     
     
     
-    NSLog(@"%@", [self.game testShowRoundOrder]);
+    
     
     
     

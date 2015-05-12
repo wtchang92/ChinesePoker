@@ -131,12 +131,48 @@
 }
 
 
+- (void) enterPlayToGame: (Player *)player {
+    Play *enteredPlay = [player makePlay];
+    NSLog(@"again this should print null from game class: %@", enteredPlay);
+    if (enteredPlay) {
+        NSLog(@"wtf");
+        [self addPlayToPile:enteredPlay atTop:YES];
+        [self moveTurnInRound];
+    }
+}
+
+- (void) moveTurnInRound {
+    NSLog(@"move in turn called");
+    for (NSUInteger i = 0; i < [self.currentRoundOrder count]; i++ ) {
+        Player *player = [self.currentRoundOrder objectAtIndex:i];
+        
+        if (player.playerStatus == (Status)isAtTurn) {
+            if (i != ([self.currentRoundOrder count]-1)) {
+                Player *playerNext = [self.currentRoundOrder objectAtIndex:(i+1)];
+                playerNext.playerStatus = (Status)isAtTurn;
+                player.playerStatus = (Status)standBy;
+                break;
+            }
+            else {
+                Player *playerNext = [self.currentRoundOrder objectAtIndex:(0)];
+                playerNext.playerStatus = (Status)isAtTurn;
+                break;
+            }
+        }
+        
+    
+    }
+    
+}
+
+
+
 - (void)addCardsToPile:(NSMutableArray *)cardsToAdd
 {
     [self addCardsToPile:cardsToAdd atTop:NO];
 }
 
-- (void)addCardsToPile:(Card *)cardsToAdd atTop:(BOOL)atTop
+- (void)addCardsToPile:(NSMutableArray *)cardsToAdd atTop:(BOOL)atTop
 {
     if (atTop) {
         [self.cardsPile insertObject:cardsToAdd atIndex:0];
@@ -145,7 +181,37 @@
     }
 }
 
+- (void)addPlayToPile:(Play *)playToAdd
+{
+    [self addPlayToPile:playToAdd atTop:NO];
+}
 
+- (void)addPlayToPile:(Play *)playToAdd atTop:(BOOL)atTop
+{
+    if (atTop) {
+        [self.cardsPile insertObject:playToAdd atIndex:0];
+    } else {
+        [self.cardsPile addObject:playToAdd];
+    }
+}
+
+- (NSString *)showPileTop {
+    Play *pileTop = [self.cardsPile firstObject];
+    NSString *pileTopResult = [[NSString alloc]init];
+    BOOL firstCard = YES;
+    for (Card *card in pileTop.chosenCardsInPlay) {
+        
+        if (firstCard) {
+            pileTopResult = [NSString stringWithFormat:@"%@",card.contents];
+            firstCard = NO;
+        }
+        else {
+            pileTopResult = [NSString stringWithFormat:@"%@, %@",pileTopResult,card.contents];
+
+        }
+    }
+    return pileTopResult;
+}
 
 - (NSArray *) testShowRoundOrder {
     

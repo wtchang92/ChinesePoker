@@ -11,25 +11,46 @@
 @implementation Player
 
 
-- (NSMutableArray *)makePlay {
+- (Play *)makePlay {
+    Play *play;
+    NSLog(@"BEFORE the play is made, the user has these in his hand");
+    for (Card *card in self.hand) {
+        NSLog(@"%@", card.contents);
+    }
+    
     NSMutableArray *playCards = [[NSMutableArray alloc]init];
+      NSLog(@"These are the chosen play cards:");
 
     if (self.playerStatus == (Status)isAtTurn) {
-    
-        NSMutableArray *playCards;
-        
+ 
         for (Card *card in self.hand) {
         
             if ([card isChosen]) {
-            
+                NSLog(@"%@", card.contents);
                 [playCards addObject:card];
             }
-        
         }
+        play = [[Play alloc]initWithChosenCards:[playCards copy]];
         
-        self.playerStatus = (Status)standBy;
+        
+        if (play.isValid) {
+            NSLog(@"AFTER the play is made, the user has these in his hand");
+            [self.hand removeObjectsInArray:playCards];
+           
+            for (Card *card in self.hand) {
+                NSLog(@"%@", card.contents);
+            }
+            
+            
+        }
+        else {
+            NSLog(@"Play is invalid, try again.");
+            play = nil;
+        }
     }
-    return playCards;
+    
+    //return playCards;
+    return play;
 }
 
 

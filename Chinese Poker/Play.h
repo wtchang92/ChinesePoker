@@ -20,11 +20,15 @@ typedef NS_ENUM(NSUInteger, PlayType) {
 
 - (instancetype)initWithChosenCards: (NSArray *)chosenCards;
 
+@property (nonatomic) NSArray *chosenCardsInPlay;
+
 @property (nonatomic) NSUInteger numberOfCards;
 
 @property (nonatomic) PlayType playType;
 
 @property (nonatomic) NSUInteger playValue;
+
+@property (nonatomic, getter=isValid) BOOL playValidness;
 
 
 @end

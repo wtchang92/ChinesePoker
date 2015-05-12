@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-3i-ktE">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="0" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8a-3i-ktE">
                                 <rect key="frame" x="16" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="1ap-R0-pAD"/>
@@ -32,7 +32,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="inu-jw-4dn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-fC-bgE">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="1" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ka-fC-bgE">
                                 <rect key="frame" x="42" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Vfv-hx-OD0"/>
@@ -47,7 +47,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4hF-H9-8Ev"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fau-lw-eXS">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="2" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fau-lw-eXS">
                                 <rect key="frame" x="67" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="V6Y-sE-Gw7"/>
@@ -62,7 +62,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oeA-OJ-sTy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-eP-BC9">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="3" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pn6-eP-BC9">
                                 <rect key="frame" x="93" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="nVN-gy-wBv"/>
@@ -77,7 +77,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vG5-u0-tO5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5T-47-9ep">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="4" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5T-47-9ep">
                                 <rect key="frame" x="119" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="0pW-OW-R0h"/>
@@ -92,7 +92,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZVR-1w-paF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1D-nh-Gj4">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="5" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1D-nh-Gj4">
                                 <rect key="frame" x="142" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="MQy-ft-gvF"/>
@@ -107,7 +107,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dst-Ub-FGW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-Ce-WMI">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="6" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnv-Ce-WMI">
                                 <rect key="frame" x="165" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="BRw-Wo-Z3j"/>
@@ -122,7 +122,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jaL-BR-z6a"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVj-sW-8F4">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="7" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVj-sW-8F4">
                                 <rect key="frame" x="188" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="WQC-xL-EVE"/>
@@ -137,7 +137,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKP-4W-heU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOM-YD-iB9">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="8" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOM-YD-iB9">
                                 <rect key="frame" x="211" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="U1D-hG-2rN"/>
@@ -152,7 +152,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="67H-DB-dnJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-fs-yC9">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="9" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADR-fs-yC9">
                                 <rect key="frame" x="235" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Q7k-7E-YOq"/>
@@ -167,7 +167,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rXj-yi-byl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4y0-B5-8Sd">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="10" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4y0-B5-8Sd">
                                 <rect key="frame" x="258" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="7FP-tl-aAU"/>
@@ -182,7 +182,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KBG-FS-SeH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqe-sd-YTF">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="11" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqe-sd-YTF">
                                 <rect key="frame" x="282" y="496" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="ENr-eR-8k7"/>
@@ -197,7 +197,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cRb-B2-W1R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEs-CQ-mkg">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="12" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEs-CQ-mkg">
                                 <rect key="frame" x="305" y="496" width="55" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="55" id="7DX-LM-hhy"/>
@@ -212,7 +212,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NUu-su-aul"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rY-8r-oM9">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="13" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rY-8r-oM9">
                                 <rect key="frame" x="16" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="PsU-w3-d2C"/>
@@ -227,7 +227,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pbE-ao-tNb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6Z-NE-mCH">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="14" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6Z-NE-mCH">
                                 <rect key="frame" x="42" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="AH3-IO-193"/>
@@ -242,7 +242,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWR-rk-pkK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWJ-fO-uKW">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="16" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWJ-fO-uKW">
                                 <rect key="frame" x="93" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="ZHT-EY-P9r"/>
@@ -257,7 +257,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nm7-9J-GQ6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8W-XW-Cbx">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="17" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8W-XW-Cbx">
                                 <rect key="frame" x="119" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="CSA-6K-PhX"/>
@@ -272,7 +272,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eHa-fO-itX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-GS-KX2">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="18" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msZ-GS-KX2">
                                 <rect key="frame" x="142" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="IfD-DO-XxE"/>
@@ -287,7 +287,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S8n-Yb-DQr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC4-Pd-OHi">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="19" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eC4-Pd-OHi">
                                 <rect key="frame" x="165" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="FQe-nl-3xu"/>
@@ -302,7 +302,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IU8-mC-9Ab"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV4-6k-Soz">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="20" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xV4-6k-Soz">
                                 <rect key="frame" x="188" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Lsb-4e-XhD"/>
@@ -317,7 +317,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oay-pG-cer"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-nX-d9e">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="21" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oe8-nX-d9e">
                                 <rect key="frame" x="211" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="ToX-JT-BLH"/>
@@ -332,7 +332,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6rc-Cz-Zc1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-5A-vHL">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="22" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-5A-vHL">
                                 <rect key="frame" x="235" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="Dz3-HG-8az"/>
@@ -347,7 +347,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s40-tV-PzX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-qF-MMS">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="23" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgj-qF-MMS">
                                 <rect key="frame" x="258" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="1Cu-Df-B4b"/>
@@ -362,7 +362,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MG9-Kj-0Lf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-6g-ZOR">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="24" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vv-6g-ZOR">
                                 <rect key="frame" x="282" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="eB8-56-CZZ"/>
@@ -377,7 +377,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2pU-1O-aJc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-wX-2tH">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="25" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjC-wX-2tH">
                                 <rect key="frame" x="305" y="20" width="55" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="6Rd-y3-aii"/>
@@ -392,7 +392,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJp-3d-Nyd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-Hi-Ifs">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="26" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isa-Hi-Ifs">
                                 <rect key="frame" x="16" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -403,7 +403,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k33-sj-6jr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNy-nc-D8i">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="27" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNy-nc-D8i">
                                 <rect key="frame" x="42" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -414,7 +414,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gI6-Q0-c6E"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdX-eh-58I">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="28" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdX-eh-58I">
                                 <rect key="frame" x="67" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -425,7 +425,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0rQ-ZR-WIq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpV-TT-MOK">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="29" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpV-TT-MOK">
                                 <rect key="frame" x="93" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -436,7 +436,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOG-es-v39"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYW-dE-C4X">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYW-dE-C4X">
                                 <rect key="frame" x="119" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -447,7 +447,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x2O-jG-iOa"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-IS-zpk">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="31" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lP-IS-zpk">
                                 <rect key="frame" x="142" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -458,7 +458,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m9C-Oz-uhx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-zc-heO">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="32" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-zc-heO">
                                 <rect key="frame" x="165" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -469,7 +469,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vu-mZ-Med"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqo-C6-Mtl">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="33" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqo-C6-Mtl">
                                 <rect key="frame" x="188" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -480,7 +480,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OzL-Oq-wUd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTQ-ic-XZo">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="34" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTQ-ic-XZo">
                                 <rect key="frame" x="211" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -491,18 +491,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ety-rD-1wE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-dP-rh6">
-                                <rect key="frame" x="235" y="125" width="32" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
-                                <state key="normal" backgroundImage="card front large">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuT-pL-hX3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y93-Sb-zaK">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="36" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y93-Sb-zaK">
                                 <rect key="frame" x="258" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -513,7 +502,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9fr-H3-Nah"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHG-aD-M03">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="37" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHG-aD-M03">
                                 <rect key="frame" x="282" y="125" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -524,7 +513,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JO7-Vr-ECJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yD5-6C-wsH">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="38" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yD5-6C-wsH">
                                 <rect key="frame" x="305" y="125" width="55" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -535,7 +524,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3RH-w3-IgX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxl-sh-Eid">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="39" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxl-sh-Eid">
                                 <rect key="frame" x="16" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -546,7 +535,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gyz-Hd-8gJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkE-wI-2uJ">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkE-wI-2uJ">
                                 <rect key="frame" x="42" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -557,7 +546,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xq9-8f-InY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-s3-ExB">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="41" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CRB-s3-ExB">
                                 <rect key="frame" x="67" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -568,7 +557,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7UV-aW-jO1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCq-to-mx5">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="42" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCq-to-mx5">
                                 <rect key="frame" x="93" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -579,7 +568,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="La4-xC-ukJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPC-Jx-bgT">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="43" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPC-Jx-bgT">
                                 <rect key="frame" x="119" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -590,7 +579,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FjG-Oc-04Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpU-YQ-R1G">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpU-YQ-R1G">
                                 <rect key="frame" x="142" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -601,7 +590,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sLJ-K9-cUk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-mf-8iu">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="45" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8j9-mf-8iu">
                                 <rect key="frame" x="165" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -612,7 +601,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gej-r8-R7Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-sL-g0F">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="46" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Df5-sL-g0F">
                                 <rect key="frame" x="188" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -623,7 +612,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wVZ-Ej-jAp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YR-Vq-Mcu">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="47" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4YR-Vq-Mcu">
                                 <rect key="frame" x="211" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -634,7 +623,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tGF-EW-YOd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXP-Em-stU">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="48" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXP-Em-stU">
                                 <rect key="frame" x="235" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -645,7 +634,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mtV-bC-HOQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-yb-qm4">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="49" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIx-yb-qm4">
                                 <rect key="frame" x="258" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -656,7 +645,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G0d-3f-MbU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-Yv-cVC">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="50" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-Yv-cVC">
                                 <rect key="frame" x="282" y="224" width="32" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -667,7 +656,7 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zny-wn-UF0"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFY-gr-SdH">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="51" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFY-gr-SdH">
                                 <rect key="frame" x="305" y="224" width="55" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
@@ -678,21 +667,18 @@
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c2k-5M-4ML"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubh-j6-rC3">
-                                <rect key="frame" x="73" y="347" width="241" height="94"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPI-h6-ABN">
-                                <rect key="frame" x="235" y="343" width="125" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="02" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAw-QH-lXG">
+                                <rect key="frame" x="235" y="411" width="55" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.96403132380000001" blue="0.30678349069999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start Round">
+                                <state key="normal" title="MP2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="makePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nxr-dD-j4h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-F4-Oir">
-                                <rect key="frame" x="238" y="343" width="125" height="50"/>
+                                <rect key="frame" x="235" y="316" width="125" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.96403132380000001" blue="0.30678349069999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start Round">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -701,7 +687,7 @@
                                     <action selector="startRound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrq-ad-jMp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1O-3j-lu5">
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="15" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1O-3j-lu5">
                                 <rect key="frame" x="67" y="20" width="32" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="hCF-VK-caD"/>
@@ -714,6 +700,60 @@
                                 </state>
                                 <connections>
                                     <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lM7-7A-7s7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="00" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qF-wq-kAD">
+                                <rect key="frame" x="235" y="374" width="55" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.96403132380000001" blue="0.30678349069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MP0">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xeg-32-Xqk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ors-BZ-BlU">
+                                <rect key="frame" x="273" y="458" width="55" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.96403132380000001" blue="0.30678349069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Pass">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="01" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ly0-zS-6GZ">
+                                <rect key="frame" x="305" y="374" width="55" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.96403132380000001" blue="0.30678349069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MP1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3fe-A9-7n0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="03" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lio-v7-mMm">
+                                <rect key="frame" x="305" y="411" width="55" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.96403132380000001" blue="0.30678349069999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="MP3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="makePlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZc-wu-nUN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMd-yB-Qcx">
+                                <rect key="frame" x="32" y="353" width="165" height="117"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="35" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-dP-rh6">
+                                <rect key="frame" x="235" y="125" width="32" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="70"/>
+                                <state key="normal" backgroundImage="card front large">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="chooseCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IuT-pL-hX3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -774,6 +814,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="pile" destination="FMd-yB-Qcx" id="N1A-UM-SH3"/>
+                        <outlet property="player1Action" destination="ly0-zS-6GZ" id="XA7-5S-EnS"/>
+                        <outlet property="player2Action" destination="aAw-QH-lXG" id="Zbd-QD-eFi"/>
+                        <outlet property="player3Action" destination="Lio-v7-mMm" id="rGf-kK-TvX"/>
+                        <outlet property="playerAction" destination="6qF-wq-kAD" id="HSE-QF-Fur"/>
                         <outletCollection property="cardsInHand" destination="s8a-3i-ktE" id="gRK-cJ-onx"/>
                         <outletCollection property="cardsInHand" destination="0Ka-fC-bgE" id="FU5-fg-14X"/>
                         <outletCollection property="cardsInHand" destination="fau-lw-eXS" id="q7b-YW-pK6"/>
@@ -843,6 +888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="208" y="248"/>
         </scene>
     </scenes>
     <resources>

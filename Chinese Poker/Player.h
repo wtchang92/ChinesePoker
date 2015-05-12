@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "Card.h"
+#import "Play.h"
 
 @interface Player : NSObject
 
-@property(strong, nonatomic) NSArray *hand;
+@property(strong, nonatomic) NSMutableArray *hand;
 
 typedef NS_ENUM(NSUInteger, Status) {
     isAtTurn,
@@ -22,7 +23,7 @@ typedef NS_ENUM(NSUInteger, Status) {
 
 // sort hand method
 //play hand method
-- (NSMutableArray *)makePlay;
-
+//- (NSMutableArray *)makePlay;
+- (Play *)makePlay;
 
 @end

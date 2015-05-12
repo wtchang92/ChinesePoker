@@ -19,21 +19,35 @@
         
         switch (self.numberOfCards) {
             case 1:
-                self.playType = (PlayType)single;
-                [self calculatePlayValue:chosenCards];
+                if ([self checkPlayValidness:chosenCards]) {
+                    self.chosenCardsInPlay = chosenCards;
+                    self.playType = (PlayType)single;
+                    self.playValue = [self calculatePlayValue:chosenCards];
+                }
                 break;
             case 2:
                 if ([self checkPlayValidness:chosenCards]) {
-                self.playType = (PlayType)deuce;
+                    self.chosenCardsInPlay = chosenCards;
+                    self.playType = (PlayType)deuce;
+                    self.playValue = [self calculatePlayValue:chosenCards];
                 }
                 break;
             case 3:
-                self.playType = (PlayType)triple;
+                if ([self checkPlayValidness:chosenCards]) {
+                    self.chosenCardsInPlay = chosenCards;
+                    self.playType = (PlayType)triple;
+                    self.playValue = [self calculatePlayValue:chosenCards];
+                }
                 break;
             case 5:
-                self.playType = (PlayType)set;
+                if ([self checkPlayValidness:chosenCards]) {
+                    self.chosenCardsInPlay = chosenCards;
+                    self.playType = (PlayType)set;
+                    self.playValue = [self calculatePlayValue:chosenCards];
+                }
                 break;
             default:
+                self.playValidness = NO;
                 break;
         }
         
@@ -139,7 +153,8 @@
             break;
     
     }
-    return validness;
+    self.playValidness = validness;
+    return self.playValidness;
 }
 
 
