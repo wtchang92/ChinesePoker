@@ -24,7 +24,7 @@
 - (void) startRound;
 - (void) moveTurnInRound;
 
-- (void) enterPlayToGame: (Player *)player;
+- (BOOL) enterPlayToGame: (Player *)player;
 
 
 - (void)addCardsToPile:(NSMutableArray *)cardsToAdd atTop:(BOOL)atTop;

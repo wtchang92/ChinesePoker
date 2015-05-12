@@ -131,14 +131,28 @@
 }
 
 
-- (void) enterPlayToGame: (Player *)player {
+- (BOOL) enterPlayToGame: (Player *)player {
     Play *enteredPlay = [player makePlay];
+    BOOL isSuccessfulPlay = NO;
     NSLog(@"again this should print null from game class: %@", enteredPlay);
-    if (enteredPlay) {
-        NSLog(@"wtf");
-        [self addPlayToPile:enteredPlay atTop:YES];
-        [self moveTurnInRound];
+    Play *pileTop = [self.cardsPile firstObject];
+    if (pileTop) {
+        if (enteredPlay && (enteredPlay.playValue > pileTop.playValue)) {
+            NSLog(@"wtf");
+            [self addPlayToPile:enteredPlay atTop:YES];
+            [self moveTurnInRound];
+            isSuccessfulPlay = YES;
+        }
     }
+    else {
+        if (enteredPlay) {
+            NSLog(@"wtf");
+            [self addPlayToPile:enteredPlay atTop:YES];
+            [self moveTurnInRound];
+            isSuccessfulPlay = YES;
+        }
+    }
+    return isSuccessfulPlay;
 }
 
 - (void) moveTurnInRound {
@@ -156,6 +170,7 @@
             else {
                 Player *playerNext = [self.currentRoundOrder objectAtIndex:(0)];
                 playerNext.playerStatus = (Status)isAtTurn;
+                player.playerStatus = (Status)standBy;
                 break;
             }
         }

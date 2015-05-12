@@ -13,7 +13,7 @@
 
 //@property (weak, nonatomic) IBOutlet UILabel *testDisplay;
 
-@property (weak, nonatomic) IBOutlet UIButton *cardInHand;
+
 @property (weak, nonatomic) IBOutlet UIButton *playerAction;
 @property (weak, nonatomic) IBOutlet UIButton *player1Action;
 @property (weak, nonatomic) IBOutlet UIButton *player2Action;

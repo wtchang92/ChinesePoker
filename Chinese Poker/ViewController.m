@@ -52,6 +52,41 @@
 
 
 - (IBAction)startRound:(UIButton *)sender {
+    [self.game dealHandToPlayers];
+    //    int counttest = 0;
+    //    for (Player *player in [self.game showPlayers]) {
+    //        NSLog(@"player %d has the following hand: ", counttest++);
+    //        for (Card *card in player.hand) {
+    //            NSLog(@"%@", card.contents);
+    //        }
+    //    }
+    Player * player = [[self.game showPlayers] objectAtIndex:0];
+    int count = 0;
+    for (Card *card in player.hand) {
+        
+        [[self.cardsInHand objectAtIndex: count++] setTitle:card.contents forState:UIControlStateNormal];
+    }
+    
+    Player * player1 = [[self.game showPlayers] objectAtIndex:1];
+    int count1 = 0;
+    for (Card *card in player1.hand) {
+        
+        [[self.cardsInHandOtherPlayer1 objectAtIndex: count1++] setTitle:card.contents forState:UIControlStateNormal];
+    }
+    Player * player2 = [[self.game showPlayers] objectAtIndex:2];
+    int count2 = 0;
+    for (Card *card in player2.hand) {
+        
+        [[self.cardsInHandOtherPlayer2 objectAtIndex: count2++] setTitle:card.contents forState:UIControlStateNormal];
+    }
+    Player * player3 = [[self.game showPlayers] objectAtIndex:3];
+    int count3 = 0;
+    for (Card *card in player3.hand) {
+        
+        [[self.cardsInHandOtherPlayer3 objectAtIndex: count3++] setTitle:card.contents forState:UIControlStateNormal];
+    }
+    
+    
     [self.game startRound];
     NSLog(@"%@", [self.game testShowRoundOrder]);
     [self updateUI];
@@ -79,7 +114,6 @@
         playerchosenCardIndex = ((NSUInteger)[sender.restorationIdentifier integerValue])-39;
     }
     
-    
     //NSUInteger chosenIndex = (NSUInteger)[sender.restorationIdentifier integerValue];
     NSLog(@"%lu", (unsigned long)playerchosenCardIndex);
     Player *player = [[self.game showPlayers] objectAtIndex:playerIndex];
@@ -106,8 +140,9 @@
     Player *player = [[self.game showPlayers] objectAtIndex:playerIndex];
     NSLog(@"this player is: %@", player);
     NSLog(@"the player has a status of %lu", (unsigned long)player.playerStatus);
-    [self.game enterPlayToGame:player];
-    [self updateUI];
+    if ([self.game enterPlayToGame:player]) {
+        [self updateUI];
+    }
     
 }
 
@@ -117,6 +152,7 @@
         switch (i) {
             case 0:
                 [self updatePlayerAction:self.playerAction forPlayer:([[self.game showPlayers] objectAtIndex:i])];
+                
                 break;
             case 1:
                 [self updatePlayerAction:self.player1Action forPlayer:([[self.game showPlayers] objectAtIndex:i])];
@@ -168,40 +204,40 @@
     
     
     //NSLog(@"%@",[self.deck drawRandomCard].contents);
-    [self.game dealHandToPlayers];
-//    int counttest = 0;
-//    for (Player *player in [self.game showPlayers]) {
-//        NSLog(@"player %d has the following hand: ", counttest++);
-//        for (Card *card in player.hand) {
-//            NSLog(@"%@", card.contents);
-//        }
+//    [self.game dealHandToPlayers];
+////    int counttest = 0;
+////    for (Player *player in [self.game showPlayers]) {
+////        NSLog(@"player %d has the following hand: ", counttest++);
+////        for (Card *card in player.hand) {
+////            NSLog(@"%@", card.contents);
+////        }
+////    }
+//    Player * player = [[self.game showPlayers] objectAtIndex:0];
+//    int count = 0;
+//    for (Card *card in player.hand) {
+//    
+//        [[self.cardsInHand objectAtIndex: count++] setTitle:card.contents forState:UIControlStateNormal];
 //    }
-    Player * player = [[self.game showPlayers] objectAtIndex:0];
-    int count = 0;
-    for (Card *card in player.hand) {
-    
-        [[self.cardsInHand objectAtIndex: count++] setTitle:card.contents forState:UIControlStateNormal];
-    }
-    
-    Player * player1 = [[self.game showPlayers] objectAtIndex:1];
-    int count1 = 0;
-    for (Card *card in player1.hand) {
-        
-        [[self.cardsInHandOtherPlayer1 objectAtIndex: count1++] setTitle:card.contents forState:UIControlStateNormal];
-    }
-    Player * player2 = [[self.game showPlayers] objectAtIndex:2];
-    int count2 = 0;
-    for (Card *card in player2.hand) {
-        
-        [[self.cardsInHandOtherPlayer2 objectAtIndex: count2++] setTitle:card.contents forState:UIControlStateNormal];
-    }
-    Player * player3 = [[self.game showPlayers] objectAtIndex:3];
-    int count3 = 0;
-    for (Card *card in player3.hand) {
-        
-        [[self.cardsInHandOtherPlayer3 objectAtIndex: count3++] setTitle:card.contents forState:UIControlStateNormal];
-    }
-    
+//    
+//    Player * player1 = [[self.game showPlayers] objectAtIndex:1];
+//    int count1 = 0;
+//    for (Card *card in player1.hand) {
+//        
+//        [[self.cardsInHandOtherPlayer1 objectAtIndex: count1++] setTitle:card.contents forState:UIControlStateNormal];
+//    }
+//    Player * player2 = [[self.game showPlayers] objectAtIndex:2];
+//    int count2 = 0;
+//    for (Card *card in player2.hand) {
+//        
+//        [[self.cardsInHandOtherPlayer2 objectAtIndex: count2++] setTitle:card.contents forState:UIControlStateNormal];
+//    }
+//    Player * player3 = [[self.game showPlayers] objectAtIndex:3];
+//    int count3 = 0;
+//    for (Card *card in player3.hand) {
+//        
+//        [[self.cardsInHandOtherPlayer3 objectAtIndex: count3++] setTitle:card.contents forState:UIControlStateNormal];
+//    }
+//    
     
     
     
