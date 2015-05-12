@@ -19,6 +19,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *player2Action;
 @property (weak, nonatomic) IBOutlet UIButton *player3Action;
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSMutableArray *cardsInHand;
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsInHandOtherPlayer1;
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsInHandOtherPlayer2;
+//@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsInHandOtherPlayer3;
+
 
 @end
 
