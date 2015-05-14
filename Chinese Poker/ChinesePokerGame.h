@@ -24,7 +24,11 @@
 - (void) startRound;
 - (void) moveTurnInRound;
 
+
 - (BOOL) enterPlayToGame: (Player *)player;
+- (void) playerIsAtTurnCallPass;
+@property (nonatomic) NSArray *currentRoundOrder;
+@property (nonatomic) BOOL roundIsActive;
 
 
 - (void)addCardsToPile:(NSMutableArray *)cardsToAdd atTop:(BOOL)atTop;

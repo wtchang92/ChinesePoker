@@ -25,7 +25,7 @@
 
 
 - (instancetype)initWithLastRoundWinner: (Player *)lastRoundWinner players:(NSMutableArray *)players {
-    
+    [self.roundPlayOrder removeAllObjects];
     self = [super init];
     
     if (self) {
@@ -44,19 +44,34 @@
                     playerIndex++;
                 }
             }
-            int playerOrderAdded = 0;
-            for (int i = playerIndex; i<4; i++) {
-                if (playerOrderAdded ==4) {
-                    playerOrderAdded = 0;
-                    break;
-                }
-                [self.roundPlayOrder addObject: [players objectAtIndex: i]];
-                if (i == 3) {
+//            int playerOrderAdded = 0;
+//            for (int i = playerIndex; i<4; i++) {
+//                if (playerOrderAdded ==4) {
+//                    playerOrderAdded = 0;
+//                    break;
+//                }
+//                [self.roundPlayOrder addObject: [players objectAtIndex: i]];
+//                if (i == 3) {
+//                
+//                    i = 0;
+//                }
+//                playerOrderAdded++;
+//            }
+            for (int i = 0; i<4; i++) {
                 
-                    i = 0;
+                NSLog(@"this should print with last round winnder player first: %@", [players objectAtIndex:playerIndex]);
+                [self.roundPlayOrder addObject: [players objectAtIndex: playerIndex]];
+                
+                if (playerIndex == 3) {
+                    playerIndex = 0;
                 }
-                playerOrderAdded++;
+                else {
+                    playerIndex++;
+                }
+                
+                
             }
+            self.passedCount = 0;
             
             
         }
@@ -90,7 +105,7 @@
                 
                 
             }
-            
+            self.passedCount = 0;
         
         }
     

@@ -34,14 +34,13 @@
         
         
         if (play.isValid) {
-            NSLog(@"AFTER the play is made, the user has these in his hand");
-            [self.hand removeObjectsInArray:playCards];
+//            NSLog(@"AFTER the play is made, the user has these in his hand");
+            //[self.hand removeObjectsInArray:playCards];
            
-            for (Card *card in self.hand) {
-                NSLog(@"%@", card.contents);
-            }
-            
-            
+//            for (Card *card in self.hand) {
+//                NSLog(@"%@", card.contents);
+//            }
+            NSLog(@"Play was successfully made");
         }
         else {
             NSLog(@"Play is invalid, try again.");
@@ -51,6 +50,15 @@
     
     //return playCards;
     return play;
+}
+
+- (void)removeCardsFromPlay: (Play *)enteredPlay {
+    
+    [self.hand removeObjectsInArray:enteredPlay.chosenCardsInPlay];
+    
+    for (Card *card in self.hand) {
+        NSLog(@"%@", card.contents);
+    }
 }
 
 

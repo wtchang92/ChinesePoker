@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Card.h"
 
+
 @interface Play : NSObject
 
 typedef NS_ENUM(NSUInteger, PlayType) {
@@ -29,6 +30,7 @@ typedef NS_ENUM(NSUInteger, PlayType) {
 @property (nonatomic) NSUInteger playValue;
 
 @property (nonatomic, getter=isValid) BOOL playValidness;
+
 
 
 @end

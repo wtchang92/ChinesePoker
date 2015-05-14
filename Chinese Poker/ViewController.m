@@ -59,7 +59,7 @@
 
 
 - (IBAction)startRound:(UIButton *)sender {
-    [self.game dealHandToPlayers];
+    //[self.game dealHandToPlayers];
     //    int counttest = 0;
     //    for (Player *player in [self.game showPlayers]) {
     //        NSLog(@"player %d has the following hand: ", counttest++);
@@ -118,6 +118,67 @@
     [self updateUI];
 }
 
+- (void)startGameRound {
+    //[self.game dealHandToPlayers];
+    //    int counttest = 0;
+    //    for (Player *player in [self.game showPlayers]) {
+    //        NSLog(@"player %d has the following hand: ", counttest++);
+    //        for (Card *card in player.hand) {
+    //            NSLog(@"%@", card.contents);
+    //        }
+    //    }
+    //    Player * player = [[self.game showPlayers] objectAtIndex:0];
+    //    int count = 0;
+    //    for (Card *card in player.hand) {
+    //
+    //        [[self.cardsInHand objectAtIndex: count++] setTitle:card.contents forState:UIControlStateNormal];
+    //    }
+    //
+    //    Player * player1 = [[self.game showPlayers] objectAtIndex:1];
+    //    //int count1 = 0;
+    //    NSUInteger count1 = 13;
+    //    NSUInteger player1CardsPostion = 0;
+    //    for (Card *card in player1.hand) {
+    //
+    //        UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    //        btn.restorationIdentifier = [NSString stringWithFormat: @"%lu", count1++];
+    //        [btn addTarget:self action:@selector(buttonTest) forControlEvents:UIControlEventTouchUpInside];
+    //        if (count1 !=26) {
+    //            btn.frame = CGRectMake(player1CardsPostion += 25,30,28,60);
+    //            [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 0)];
+    //        }
+    //        else {
+    //            btn.frame = CGRectMake(player1CardsPostion += 25,30,45,60);
+    //            [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
+    //        }
+    //        [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
+    //        [btn setTitle:card.contents forState:UIControlStateNormal];
+    //        [btn.titleLabel setFont:[UIFont systemFontOfSize:9]];
+    //
+    //        [self.view addSubview:btn];
+    //
+    //        //[[self.cardsInHandOtherPlayer1 objectAtIndex: count1++] setTitle:card.contents forState:UIControlStateNormal];
+    //    }
+    //    Player * player2 = [[self.game showPlayers] objectAtIndex:2];
+    //    int count2 = 0;
+    //    for (Card *card in player2.hand) {
+    //
+    //        [[self.cardsInHandOtherPlayer2 objectAtIndex: count2++] setTitle:card.contents forState:UIControlStateNormal];
+    //    }
+    //    Player * player3 = [[self.game showPlayers] objectAtIndex:3];
+    //    int count3 = 0;
+    //    for (Card *card in player3.hand) {
+    //
+    //        [[self.cardsInHandOtherPlayer3 objectAtIndex: count3++] setTitle:card.contents forState:UIControlStateNormal];
+    //    }
+    
+    
+    [self.game startRound];
+    NSLog(@"%@", [self.game testShowRoundOrder]);
+    [self updateUI];
+}
+
+
 
 
 - (IBAction)chooseCard:(UIButton *)sender {
@@ -154,25 +215,45 @@
     }
     
     if (card.isChosen) {
-        NSLog(@"Card is chosen");
+        NSLog(@"Card is chosen: %@", card.contents);
+        
     } else {
-        NSLog(@"Card is now not chosen");
+        NSLog(@"Card is now not chosen: %@", card.contents);
     }
+    [self updateUI];
 }
 
 
 - (IBAction)makePlay:(UIButton *)sender {
     NSUInteger playerIndex = (NSUInteger)[sender.restorationIdentifier integerValue];
-    NSLog(@"the player making the play has an index number of: %lu", playerIndex);
+    NSLog(@"the player making the play has an index number of: %lu", (unsigned long)playerIndex);
     
     Player *player = [[self.game showPlayers] objectAtIndex:playerIndex];
     NSLog(@"this player is: %@", player);
     NSLog(@"the player has a status of %lu", (unsigned long)player.playerStatus);
     if ([self.game enterPlayToGame:player]) {
+        NSLog(@"pile top is: %@",[self.game showPileTop]);
         [self updateUI];
+    } else {
+        NSLog(@"play was unsucessful");
     }
     
 }
+
+- (IBAction)callPass:(UIButton *)sender {
+    if (![[self.game showPileTop] isEqualToString:@""]){
+        [self.game playerIsAtTurnCallPass];
+        if (!self.game.roundIsActive) {
+            [self.game startRound];
+        }
+        NSLog(@"Player passed");
+        [self updateUI];
+    }
+    else {
+        NSLog(@"DIAMOND 3 OWNER or LAST ROUND WINNER MUST START THE A ROUND");
+    }
+}
+
 
 - (void) updateUI {
 //    Player * player = [[self.game showPlayers] objectAtIndex:0];
@@ -308,26 +389,47 @@
         }
         NSUInteger numberOfButtonsCreated = 1;
         for (Card *card in player.hand) {
+            if (!card.isChosen) {
             
-            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-            
-            btn.restorationIdentifier = [NSString stringWithFormat: @"%lu", cardIdentifier++];
-            [btn addTarget:self action:@selector(chooseCard:) forControlEvents:UIControlEventTouchUpInside];
-            if (numberOfButtonsCreated == [player.hand count]) {
-                btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion,28,60);
-                [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 0)];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                
+                btn.restorationIdentifier = [NSString stringWithFormat: @"%lu", (unsigned long)cardIdentifier++];
+                [btn addTarget:self action:@selector(chooseCard:) forControlEvents:UIControlEventTouchUpInside];
+                if (numberOfButtonsCreated == [player.hand count]) {
+                    btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion,45,60);
+                    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
+                }
+                else {
+                    btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion,45,60);
+                    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
+                }
+                [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
+                [btn setTitle:card.contents forState:UIControlStateNormal];
+                [btn.titleLabel setFont:[UIFont systemFontOfSize:8]];
+                btn.tag = 999;
+                
+                [self.view addSubview:btn];
             }
             else {
-                btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion,45,60);
-                [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
+                UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                
+                btn.restorationIdentifier = [NSString stringWithFormat: @"%lu", (unsigned long)cardIdentifier++];
+                [btn addTarget:self action:@selector(chooseCard:) forControlEvents:UIControlEventTouchUpInside];
+                if (numberOfButtonsCreated == [player.hand count]) {
+                    btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion-20,45,60);
+                    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
+                }
+                else {
+                    btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion-20,45,60);
+                    [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
+                }
+                [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
+                [btn setTitle:card.contents forState:UIControlStateNormal];
+                [btn.titleLabel setFont:[UIFont systemFontOfSize:8]];
+                btn.tag = 999;
+                
+                [self.view addSubview:btn];
             }
-            [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
-            [btn setTitle:card.contents forState:UIControlStateNormal];
-            [btn.titleLabel setFont:[UIFont systemFontOfSize:8]];
-            btn.tag = 999;
-            
-            [self.view addSubview:btn];
-            
             //[[self.cardsInHandOtherPlayer1 objectAtIndex: count1++] setTitle:card.contents forState:UIControlStateNormal];
             numberOfButtonsCreated++;
             
@@ -383,6 +485,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.game dealHandToPlayers];
+    [self startGameRound];
     
     
 //    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];

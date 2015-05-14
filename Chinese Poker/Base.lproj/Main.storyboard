@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="O37-Fy-uNF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="ORp-JA-b0Z">
+            <objects>
+                <viewController id="H1u-06-9ef" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S0y-yT-pzV"/>
+                        <viewControllerLayoutGuide type="bottom" id="tX2-ad-2p0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5aE-PI-Kwb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2EZ-yZ-pnk">
+                                <rect key="frame" x="233" y="350" width="135" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zf6-iP-bXU"/>
+                                    <constraint firstAttribute="width" constant="135" id="rjc-Ie-4Kh"/>
+                                </constraints>
+                                <state key="normal" title="Single Player Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="SKH-uA-Ek6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Big 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygj-od-oYc">
+                                <rect key="frame" x="236" y="113" width="128" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="aGE-ld-uLR"/>
+                                    <constraint firstAttribute="height" constant="57" id="f9S-vr-NgW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3EN-Op-fEG">
+                                <rect key="frame" x="240" y="388" width="121" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9dF-hj-cd7"/>
+                                    <constraint firstAttribute="width" constant="121" id="f3M-Y1-wGz"/>
+                                </constraints>
+                                <state key="normal" title="Multiplayer Game">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2EZ-yZ-pnk" firstAttribute="top" secondItem="Ygj-od-oYc" secondAttribute="bottom" constant="180" id="1PS-nY-VWG"/>
+                            <constraint firstAttribute="centerX" secondItem="3EN-Op-fEG" secondAttribute="centerX" id="cOu-aW-wCM"/>
+                            <constraint firstItem="Ygj-od-oYc" firstAttribute="top" secondItem="S0y-yT-pzV" secondAttribute="bottom" constant="49" id="gtb-hN-b7v"/>
+                            <constraint firstAttribute="centerX" secondItem="2EZ-yZ-pnk" secondAttribute="centerX" id="hjs-nx-lD2"/>
+                            <constraint firstItem="3EN-Op-fEG" firstAttribute="top" secondItem="2EZ-yZ-pnk" secondAttribute="bottom" constant="8" id="lQg-H7-qGh"/>
+                            <constraint firstAttribute="centerX" secondItem="Ygj-od-oYc" secondAttribute="centerX" id="qft-dU-yLE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MFy-9l-LAX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPg-UM-X5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="310" y="248"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -52,6 +114,9 @@
                                 <state key="normal" title="Pass">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="callPass:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9V7-fp-hhZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="01" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ly0-zS-6GZ">
                                 <rect key="frame" x="305" y="374" width="55" height="30"/>
@@ -92,7 +157,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="248"/>
+            <point key="canvasLocation" x="1020" y="248"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K3p-Lk-HCo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O37-Fy-uNF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lar-mR-98y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="H1u-06-9ef" kind="relationship" relationship="rootViewController" id="IqH-gj-opF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRk-I6-9gi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-502" y="248"/>
         </scene>
     </scenes>
 </document>

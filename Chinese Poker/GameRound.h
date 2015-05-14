@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "Play.h"
 
 @interface GameRound : NSObject
 - (instancetype)initWithLastRoundWinner: (Player *)lastRoundWinner players:(NSMutableArray *)players;
@@ -15,8 +16,11 @@
 @property (strong, nonatomic) Player *winnerOfRound;
 
 //property for playType
+@property (nonatomic) PlayType roundPlayType;
 
 - (NSArray *) playerOrder;
+@property (nonatomic) NSUInteger passedCount;
+@property (nonatomic) Player *lastPlayPlaymaker;
 
 
 

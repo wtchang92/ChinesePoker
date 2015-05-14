@@ -10,6 +10,7 @@
 #import "Card.h"
 #import "Play.h"
 
+
 @interface Player : NSObject
 
 @property(strong, nonatomic) NSMutableArray *hand;
@@ -25,5 +26,8 @@ typedef NS_ENUM(NSUInteger, Status) {
 //play hand method
 //- (NSMutableArray *)makePlay;
 - (Play *)makePlay;
+- (void)removeCardsFromPlay: (Play *)enteredPlay;
+
+
 
 @end

@@ -65,7 +65,7 @@
                 NSUInteger suitValue;
                 NSUInteger rankValue;
                 NSUInteger cardValue;
-                NSString *suit = [card.contents substringFromIndex:1];
+                NSString *suit = [card.contents  substringFromIndex:[card.contents length]-1];
                 if ([suit isEqualToString:@"♠"]) {
                     suitValue = 8;
                 }
@@ -78,12 +78,18 @@
                 else {
                     suitValue = 0;
                 }
-                NSString *rank = [card.contents substringToIndex:1];
+                NSString *rank;
+                if ([card.contents length]>2){
+                    rank = [card.contents substringToIndex:2];
+                }
+                else {
+                    rank = [card.contents substringToIndex:1];
+                }
                 if ([rank isEqualToString: @"2"]) {rankValue = 150;}
                 else if ([rank isEqualToString: @"A"]) {rankValue = 140;}
                 else if ([rank isEqualToString: @"K"]) {rankValue = 130;}
                 else if ([rank isEqualToString: @"Q"]) {rankValue = 120;}
-                else if ([rank isEqualToString: @"K"]) {rankValue = 110;}
+                else if ([rank isEqualToString: @"J"]) {rankValue = 110;}
                 else {rankValue = [rank intValue] * 10;}
                 cardValue = suitValue + rankValue;
                 value += cardValue;
@@ -141,10 +147,17 @@
         case 2:
         case 3:
             for (Card *card in chosenCards) {
-                
-                if (![[card.contents substringToIndex:1] isEqual:rankValue]) {
-                    
-                    validness = NO;
+                if ([card.contents length] >2){
+                    if (![[card.contents substringToIndex:2] isEqual:rankValue]) {
+                        
+                        validness = NO;
+                    }
+                }
+                else {
+                    if (![[card.contents substringToIndex:1] isEqual:rankValue]) {
+                        
+                        validness = NO;
+                    }
                 }
             }
             break;
