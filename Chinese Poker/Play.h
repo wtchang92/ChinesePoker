@@ -19,6 +19,14 @@ typedef NS_ENUM(NSUInteger, PlayType) {
     set
 };
 
+typedef NS_ENUM(NSUInteger, SetType) {
+    straight,
+    flush,
+    fullHouse,
+    fourOfAKind,
+    straightFlush
+};
+
 - (instancetype)initWithChosenCards: (NSArray *)chosenCards;
 
 @property (nonatomic) NSArray *chosenCardsInPlay;
@@ -30,6 +38,9 @@ typedef NS_ENUM(NSUInteger, PlayType) {
 @property (nonatomic) NSUInteger playValue;
 
 @property (nonatomic, getter=isValid) BOOL playValidness;
+
+@property (nonatomic) SetType setType;
+
 
 
 

@@ -13,6 +13,8 @@
 @interface GameRound : NSObject
 - (instancetype)initWithLastRoundWinner: (Player *)lastRoundWinner players:(NSMutableArray *)players;
 
+@property (nonatomic) BOOL isFirstRound;
+
 @property (strong, nonatomic) Player *winnerOfRound;
 
 //property for playType

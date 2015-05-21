@@ -10,6 +10,7 @@
 #import "PlayingCardDeck.h"
 #import "PlayingCard.h"
 #import "ChinesePokerGame.h"
+#import "CPUBot.h"
 
 //#import "PlayingCard.h"
 
@@ -26,6 +27,7 @@
 //@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardsInHandOtherPlayer3;
 
 @property (weak, nonatomic) IBOutlet UILabel *pile;
+@property (weak, nonatomic) IBOutlet UILabel *humanPlayerLabel;
 
 @property (strong, nonatomic) Deck *deck;
 @property (strong, nonatomic) ChinesePokerGame * game;
@@ -36,7 +38,7 @@
 -(ChinesePokerGame *)game
 {
     
-    if (!_game) _game = [[ChinesePokerGame alloc]initWithPlayers:4 usingDeck:[self createDeck]];
+    if (!_game) _game = [[ChinesePokerGame alloc]initWithPlayers:4 usingGameMode:(GameMode)singlePlayer usingDeck:[self createDeck]];
     return _game;
     
     
@@ -112,11 +114,38 @@
 //        [[self.cardsInHandOtherPlayer3 objectAtIndex: count3++] setTitle:card.contents forState:UIControlStateNormal];
 //    }
     
-    [self updateUI];
+    [self.game dealHandToPlayers];
     [self.game startRound];
+    
     NSLog(@"%@", [self.game testShowRoundOrder]);
+    
     [self updateUI];
 }
+
+- (IBAction)activateBot:(UIButton *)sender {
+    for (Player *player in[self.game showPlayers] ) {
+        if (!player.isHuman && player.playerStatus == (Status)isAtTurn){
+            NSLog(@"CPU player should choose cards");
+            CPUBot *bot = [[CPUBot alloc]initToPlayFor:player inThisRound:self.game.currentRound withPileTopPlay:[self.game showPileTopPlay]];
+            //cpu makes play, makes move if can beat it or else return pass call
+            if ([bot choosePlayFromHand:bot.hand playToBeat:[self.game showPileTopPlay]]){
+                NSLog(@"CPU did find a play");
+                
+            }
+            else {
+                NSLog(@"CPU did NOT found a play");
+                
+            }
+            break;
+            
+        }
+    }
+    [self updateUI];
+}
+
+
+
+
 
 - (void)startGameRound {
     //[self.game dealHandToPlayers];
@@ -175,6 +204,7 @@
     
     [self.game startRound];
     NSLog(@"%@", [self.game testShowRoundOrder]);
+    
     [self updateUI];
 }
 
@@ -231,23 +261,143 @@
     Player *player = [[self.game showPlayers] objectAtIndex:playerIndex];
     NSLog(@"this player is: %@", player);
     NSLog(@"the player has a status of %lu", (unsigned long)player.playerStatus);
+    if (player.isHuman){
+        NSLog(@"this is the human player");
+    }
+    else {
+        NSLog(@"this is a CPU player");
+    }
     if ([self.game enterPlayToGame:player]) {
-        NSLog(@"pile top is: %@",[self.game showPileTop]);
-        [self updateUI];
+        if ([self.game getWinnerOfTheGame]) {
+            [self updateUI];
+            UILabel *winnerLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 200, 200, 150)];
+            winnerLabel.textAlignment = NSTextAlignmentCenter;
+            [winnerLabel setText: @"Winner!"];
+            [winnerLabel sizeToFit];
+            [winnerLabel setBackgroundColor: [UIColor yellowColor]];
+            [winnerLabel sizeToFit];
+            winnerLabel.center = self.view.center;
+            //[winnerLabel setCenter: CGPointMake(self.view.center.x, winnerLabel.center.y)];
+            [self.view addSubview:winnerLabel];
+        }
+        else {
+            NSLog(@"pile top is: %@",[self.game showPileTop]);
+            [self updateUI];
+            Player *nextCPUPlayer;
+            for (Player *player in self.game.currentRoundOrder) {
+                if (!player.isHuman && player.playerStatus == (Status)isAtTurn) {
+                    //call the bot pass this player as the argument
+                    nextCPUPlayer = player;
+                    break;
+                }
+            }
+            [self activateCPUBot:nextCPUPlayer];
+        }
+        
     } else {
         NSLog(@"play was unsucessful");
     }
     
 }
 
+- (void) activateCPUBot: (Player *)playerCPUBotPlaysFor {
+//    for (Player *player in[self.game showPlayers] ) {
+//        if (!player.isHuman && player.playerStatus == (Status)isAtTurn){
+            NSLog(@"CPU player should choose cards");
+            CPUBot *bot = [[CPUBot alloc]initToPlayFor:playerCPUBotPlaysFor inThisRound:self.game.currentRound withPileTopPlay:[self.game showPileTopPlay]];
+            //cpu makes play, makes move if can beat it or else return pass call
+            if ([bot choosePlayFromHand:bot.hand playToBeat:[self.game showPileTopPlay]]){
+                NSLog(@"CPU did find a play, then cpuBotMakePlay");
+                [self cpuBotMakePlay:playerCPUBotPlaysFor];
+                
+            }
+            else {
+                NSLog(@"CPU did NOT find a play");
+                [self cpuBotCallPass:playerCPUBotPlaysFor];
+            }
+//            break;
+//            
+//        }
+//    }
+    [self updateUI];
+}
+
+- (void)cpuBotMakePlay: (Player *) playerCPUBotPlaysFor {
+    
+    NSLog(@"this player is: %@", playerCPUBotPlaysFor);
+    NSLog(@"the player has a status of %lu", (unsigned long)playerCPUBotPlaysFor.playerStatus);
+    if ([self.game enterPlayToGame:playerCPUBotPlaysFor]) {
+        if ([self.game getWinnerOfTheGame]) {
+            [self updateUI];
+            UILabel *winnerLabel = [[UILabel alloc] initWithFrame: CGRectMake(250, 200, 200, 150)];
+            winnerLabel.textAlignment = NSTextAlignmentCenter;
+            [winnerLabel setText: @"Winner!"];
+            [winnerLabel sizeToFit];
+            [winnerLabel setBackgroundColor: [UIColor yellowColor]];
+            [winnerLabel sizeToFit];
+            winnerLabel.center = self.view.center;
+            //[winnerLabel setCenter: CGPointMake(self.view.center.x, winnerLabel.center.y)];
+            [self.view addSubview:winnerLabel];
+        }
+        else {
+            NSLog(@"pile top is: %@",[self.game showPileTop]);
+            [self updateUI];
+            
+            for (Player *player in self.game.currentRoundOrder) {
+                if (!player.isHuman && player.playerStatus == (Status)isAtTurn) {
+                    //call the bot pass this player as the argument
+                     [self activateCPUBot:player];
+                }
+                
+            }
+        }
+        
+    } else {
+        NSLog(@"play was unsucessful");
+    }
+    
+}
+
+
+
+
 - (IBAction)callPass:(UIButton *)sender {
     if (![[self.game showPileTop] isEqualToString:@""]){
         [self.game playerIsAtTurnCallPass];
-        if (!self.game.roundIsActive) {
-            [self.game startRound];
-        }
+//        if (!self.game.roundIsActive) {
+//            [self.game startRound];
+//        }
         NSLog(@"Player passed");
         [self updateUI];
+        for (Player *player in self.game.currentRoundOrder) {
+            if (!player.isHuman && player.playerStatus == (Status)isAtTurn) {
+                //call the bot pass this player as the argument
+                [self activateCPUBot:player];
+            }
+            
+        }
+    }
+    else {
+        NSLog(@"DIAMOND 3 OWNER or LAST ROUND WINNER MUST START THE A ROUND");
+    }
+}
+
+- (void)cpuBotCallPass:(Player *) playerCPUBotPlaysFor {
+    if (![[self.game showPileTop] isEqualToString:@""]){
+        [self.game playerIsAtTurnCallPass];
+        //        if (!self.game.roundIsActive) {
+        //            [self.game startRound];
+        //        }
+        NSLog(@"Player passed");
+        
+        [self updateUI];
+        for (Player *player in self.game.currentRoundOrder) {
+            if (!player.isHuman && player.playerStatus == (Status)isAtTurn) {
+                //call the bot pass this player as the argument
+                [self activateCPUBot:player];
+            }
+            
+        }
     }
     else {
         NSLog(@"DIAMOND 3 OWNER or LAST ROUND WINNER MUST START THE A ROUND");
@@ -377,15 +527,15 @@
         }
         else if (playerIndex == 1) {
             cardIdentifier = p1CardIdentifier;
-            playerCardsyPostion = 30;
+            playerCardsyPostion = 75;
         }
         else if (playerIndex == 2) {
             cardIdentifier = p2CardIdentifier;
-            playerCardsyPostion = 120;
+            playerCardsyPostion = 165;
         }
         else {
             cardIdentifier = p3CardIdentifier;
-            playerCardsyPostion = 210;
+            playerCardsyPostion = 255;
         }
         NSUInteger numberOfButtonsCreated = 1;
         for (Card *card in player.hand) {
@@ -403,9 +553,15 @@
                     btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion,45,60);
                     [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
                 }
-                [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
-                [btn setTitle:card.contents forState:UIControlStateNormal];
-                [btn.titleLabel setFont:[UIFont systemFontOfSize:8]];
+                if (player.isHuman) {
+                    [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
+                    [btn setTitle:card.contents forState:UIControlStateNormal];
+                    [btn.titleLabel setFont:[UIFont systemFontOfSize:8]];
+                }
+                else {
+                    [btn setBackgroundImage: [UIImage imageNamed: @"cardBack" ] forState:UIControlStateNormal];
+                }
+                
                 btn.tag = 999;
                 
                 [self.view addSubview:btn];
@@ -423,9 +579,14 @@
                     btn.frame = CGRectMake(playerCardsxPostion += 25,playerCardsyPostion-20,45,60);
                     [btn setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, 40, 24)];
                 }
-                [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
-                [btn setTitle:card.contents forState:UIControlStateNormal];
-                [btn.titleLabel setFont:[UIFont systemFontOfSize:8]];
+                if (player.isHuman) {
+                    [btn setBackgroundImage: [UIImage imageNamed: @"card front large" ] forState:UIControlStateNormal];
+                    [btn setTitle:card.contents forState:UIControlStateNormal];
+                    [btn.titleLabel setFont:[UIFont systemFontOfSize:7.5]];
+                }
+                else {
+                    [btn setBackgroundImage: [UIImage imageNamed: @"cardBack" ] forState:UIControlStateNormal];
+                }
                 btn.tag = 999;
                 
                 [self.view addSubview:btn];
@@ -485,8 +646,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.game dealHandToPlayers];
-    [self startGameRound];
+//    [self.game dealHandToPlayers];
+//    [self startGameRound];
     
     
 //    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];

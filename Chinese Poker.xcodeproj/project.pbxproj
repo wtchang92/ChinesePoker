@@ -22,6 +22,7 @@
 		64231CE61AFD0AA600DABBAD /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CE51AFD0AA600DABBAD /* Player.m */; };
 		64231CE91AFEC58A00DABBAD /* Turns.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CE81AFEC58A00DABBAD /* Turns.m */; };
 		64231CEC1AFEC6A100DABBAD /* GameRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 64231CEB1AFEC6A100DABBAD /* GameRound.m */; };
+		6428A19D1B0BAE0900CD0FE6 /* CPUBot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6428A19C1B0BAE0900CD0FE6 /* CPUBot.m */; };
 		64907A331AFFF60C002FE6D0 /* Play.m in Sources */ = {isa = PBXBuildFile; fileRef = 64907A321AFFF60C002FE6D0 /* Play.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		64231CE81AFEC58A00DABBAD /* Turns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Turns.m; sourceTree = "<group>"; };
 		64231CEA1AFEC6A100DABBAD /* GameRound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameRound.h; sourceTree = "<group>"; };
 		64231CEB1AFEC6A100DABBAD /* GameRound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameRound.m; sourceTree = "<group>"; };
+		6428A19B1B0BAE0900CD0FE6 /* CPUBot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPUBot.h; sourceTree = "<group>"; };
+		6428A19C1B0BAE0900CD0FE6 /* CPUBot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPUBot.m; sourceTree = "<group>"; };
 		64907A311AFFF60C002FE6D0 /* Play.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Play.h; sourceTree = "<group>"; };
 		64907A321AFFF60C002FE6D0 /* Play.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Play.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +157,8 @@
 				640F0CF11AFADAE00016232D /* Card.m */,
 				64231CE11AFD035F00DABBAD /* ChinesePokerGame.h */,
 				64231CE21AFD035F00DABBAD /* ChinesePokerGame.m */,
+				6428A19B1B0BAE0900CD0FE6 /* CPUBot.h */,
+				6428A19C1B0BAE0900CD0FE6 /* CPUBot.m */,
 				64231CE71AFEC58A00DABBAD /* Turns.h */,
 				64231CE81AFEC58A00DABBAD /* Turns.m */,
 				64231CEA1AFEC6A100DABBAD /* GameRound.h */,
@@ -274,6 +279,7 @@
 			files = (
 				64231CE91AFEC58A00DABBAD /* Turns.m in Sources */,
 				640F0CF91AFB08A40016232D /* PlayingCard.m in Sources */,
+				6428A19D1B0BAE0900CD0FE6 /* CPUBot.m in Sources */,
 				640F0CF61AFB01120016232D /* Deck.m in Sources */,
 				64231CEC1AFEC6A100DABBAD /* GameRound.m in Sources */,
 				640F0CD11AFAA5030016232D /* ViewController.m in Sources */,

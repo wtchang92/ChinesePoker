@@ -13,9 +13,9 @@
 @property (nonatomic) NSUInteger roundNumber;
 @property (nonatomic, strong) Player *lastRoundWinner;
 @property (nonatomic) Player *playerAtTurn;
-
 @property (strong, nonatomic) NSMutableArray *cardsPile;
-@property (strong, nonatomic) GameRound *currentRound;
+
+@property (nonatomic) Player *winnerOfGame;
 
 @end
 
@@ -38,11 +38,9 @@
     return _players;
 }
 
-- (instancetype)initWithPlayers: (NSInteger)count usingDeck:(Deck *)deck {
+- (instancetype)initWithPlayers: (NSInteger)count usingGameMode:(GameMode)mode usingDeck:(Deck *)deck {
 
     self = [super init];
-    
-    
     
     if (self) {
     
@@ -65,9 +63,27 @@
         }
         
         self.numOfPlayers = count;
-        for (int i = 0; i < self.numOfPlayers; i++) {
-            Player *player = [[Player alloc]init];
-            [self.players addObject:player];
+        if (mode == (GameMode)singlePlayer){
+            BOOL singlePlayerFlag = YES;
+            for (int i = 0; i < self.numOfPlayers; i++) {
+                if (singlePlayerFlag) {
+                    Player *player = [[Player alloc]init];
+                    player.isHuman = YES;
+                    [self.players addObject:player];
+                    singlePlayerFlag = NO;
+                }
+                else {
+                    Player *player = [[Player alloc]init];
+                    player.isHuman = NO;
+                    [self.players addObject:player];
+                }
+            }
+        }
+        else {
+            for (int i = 0; i < self.numOfPlayers; i++) {
+                Player *player = [[Player alloc]init];
+                [self.players addObject:player];
+            }
         }
     
     }
@@ -94,8 +110,9 @@
     NSUInteger count = 0;
     
     for (Player *player in self.players) {
-        player.hand = [self dealHand:countOfCards startRange:count  ];
+        player.hand = [self dealHand:countOfCards startRange:count];
         count = count +13;
+        player.hand = [player quickSort:player.hand];
         NSLog(@"%lu", (unsigned long)count);
     }
 
@@ -113,8 +130,8 @@
     }
     self.currentRound = [[GameRound alloc]initWithLastRoundWinner:self.lastRoundWinner players:self.players];
     //GameRound *round = [[GameRound alloc]initWithLastRoundWinner:self.lastRoundWinner players:self.players];
-    
-    self.roundIsActive = YES;
+    self.currentRound.isFirstRound = YES;
+    self.gameIsActive = YES;
     self.currentRoundOrder = [self.currentRound playerOrder];
     NSUInteger playerStatusHelperCount = 0;
     for (Player *player in self.currentRoundOrder) {
@@ -136,40 +153,83 @@
 
 
 - (BOOL) enterPlayToGame: (Player *)player {
-    Play *enteredPlay = [player makePlay];
-    if (enteredPlay) {
-        NSLog(@"the play exist");
-    }
     BOOL isSuccessfulPlay = NO;
-    NSLog(@"again this should print null from game class: %@", enteredPlay);
-    Play *pileTop = [self.cardsPile firstObject];
-    if (pileTop) {
-        NSLog(@"pile top exist");
-        if (enteredPlay && (enteredPlay.playValue > pileTop.playValue) && self.currentRound.roundPlayType == enteredPlay.playType) {
-            NSLog(@"wtf");
-            [self addPlayToPile:enteredPlay atTop:YES];
-            [self moveTurnInRound];
-            isSuccessfulPlay = YES;
-            [player removeCardsFromPlay:enteredPlay];
+    if (self.gameIsActive) {
+        Play *enteredPlay = [player makePlay];
+        if (enteredPlay) {
+            NSLog(@"the play exist");
+        }
+        
+        NSLog(@"again this should print null from game class: %@", enteredPlay);
+        Play *pileTop = [self.cardsPile firstObject];
+        if (pileTop) {
+            NSLog(@"pile top exist");
+            if (enteredPlay && (enteredPlay.playValue > pileTop.playValue) && self.currentRound.roundPlayType == enteredPlay.playType) {
+                NSLog(@"wtf");
+                [self addPlayToPile:enteredPlay atTop:YES];
+                isSuccessfulPlay = YES;
+                [player removeCardsFromPlay:enteredPlay];
+                if ([player.hand count] == 0) {
+                    NSLog(@"We have a winner");
+                    self.winnerOfGame = player;
+                    self.gameIsActive = NO;
+                }
+                else {
+                    [self moveTurnInRound];
+                }
+            }
+            else {
+                NSLog(@"there is a value issue");
+                NSLog(@"Piletop value is %lu and playValue is %lu", (unsigned long)pileTop.playValue, (unsigned long)enteredPlay.playValue    );
+            }
         }
         else {
-            NSLog(@"there is a value issue");
-            NSLog(@"Piletop value is %lu and playValue is %lu", (unsigned long)pileTop.playValue, (unsigned long)enteredPlay.playValue    );
+            
+            if (self.currentRound.isFirstRound) {
+                for (Card *card in enteredPlay.chosenCardsInPlay) {
+                    if ([card.contents isEqualToString:@"3♦"]) {
+                        NSLog(@"wtf");
+                        [self addPlayToPile:enteredPlay atTop:YES];
+                        isSuccessfulPlay = YES;
+                        [player removeCardsFromPlay:enteredPlay];
+                        if ([player.hand count] == 0) {
+                            self.winnerOfGame = player;
+                            NSLog(@"We have a winner");
+                            self.gameIsActive = NO;
+                        }
+                        else {
+                            [self moveTurnInRound];
+                        }
+                        self.currentRound.roundPlayType = enteredPlay.playType;
+                        self.currentRound.isFirstRound = NO;
+                        break;
+                    }
+                    else {
+                        NSLog(@"First play in game must have diamond 3");
+                    }
+                }
+            }
+            else if (enteredPlay) {
+                NSLog(@"wtf");
+                [self addPlayToPile:enteredPlay atTop:YES];
+                isSuccessfulPlay = YES;
+                [player removeCardsFromPlay:enteredPlay];
+                if ([player.hand count] == 0) {
+                    self.winnerOfGame = player;
+                    NSLog(@"We have a winner");
+                    self.gameIsActive = NO;
+                }
+                else {
+                    [self moveTurnInRound];
+                }
+                self.currentRound.roundPlayType = enteredPlay.playType;
+            }
         }
-    }
-    else {
-        if (enteredPlay) {
-            NSLog(@"wtf");
-            [self addPlayToPile:enteredPlay atTop:YES];
-            [self moveTurnInRound];
-            isSuccessfulPlay = YES;
-            [player removeCardsFromPlay:enteredPlay];
-            self.currentRound.roundPlayType = enteredPlay.playType;
+        if (isSuccessfulPlay) {
+            self.currentRound.lastPlayPlaymaker = player;
+            self.currentRound.passedCount = 0;
+            
         }
-    }
-    if (isSuccessfulPlay) {
-        self.currentRound.lastPlayPlaymaker = player;
-        self.currentRound.passedCount = 0;
     }
     return isSuccessfulPlay;
 }
@@ -217,8 +277,6 @@
         }
         if(self.lastRoundWinner == (Status)isAtTurn){NSLog(@"last round winner is at turn");}
         
-        
-        self.roundIsActive = NO;
 //        Player *nextRoundStarter = [self.currentRoundOrder objectAtIndex:0];
 //        if (nextRoundStarter.playerStatus == (Status)isAtTurn) {
 //            NSLog(@"last round winner is at turn");}
@@ -288,6 +346,10 @@
 
 - (NSString *)showPileTop {
     Play *pileTop = [self.cardsPile firstObject];
+    if(pileTop.setType) {
+        NSLog(@"SET TYPE IS: %lu", (unsigned long)pileTop.setType);
+    }
+        ;
     NSString *pileTopResult = [[NSString alloc]init];
     BOOL firstCard = YES;
     for (Card *card in pileTop.chosenCardsInPlay) {
@@ -304,13 +366,22 @@
     return pileTopResult;
 }
 
+- (Play *)showPileTopPlay {
+    Play *pileTopPlay = [self.cardsPile firstObject];
+    return pileTopPlay;
+}
+
 - (NSArray *) testShowRoundOrder {
     
     NSArray *returnOrder = self.currentRoundOrder;
 
     return returnOrder;
 }
-    
+
+- (Player *) getWinnerOfTheGame {
+
+    return self.winnerOfGame;
+}
 
 
     

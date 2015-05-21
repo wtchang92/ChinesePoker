@@ -15,6 +15,9 @@
 
 @property(strong, nonatomic) NSMutableArray *hand;
 
+@property(nonatomic) BOOL isHuman;
+
+
 typedef NS_ENUM(NSUInteger, Status) {
     isAtTurn,
     standBy,
@@ -27,6 +30,7 @@ typedef NS_ENUM(NSUInteger, Status) {
 //- (NSMutableArray *)makePlay;
 - (Play *)makePlay;
 - (void)removeCardsFromPlay: (Play *)enteredPlay;
+-(NSMutableArray *)quickSort:(NSMutableArray *)unsortedDataArray;
 
 
 

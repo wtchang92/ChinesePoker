@@ -61,5 +61,72 @@
     }
 }
 
+-(NSMutableArray *)quickSort:(NSMutableArray *)unsortedDataArray
+{
+    
+    NSMutableArray *lessArray = [[NSMutableArray alloc]init];
+    NSMutableArray *greaterArray = [[NSMutableArray alloc]init];
+    if ([unsortedDataArray count] <1)
+    {
+        return nil;
+    }
+    int randomPivotPoint = arc4random() % [unsortedDataArray count];
+    Card *pivotCard = [unsortedDataArray objectAtIndex:randomPivotPoint];
+    [unsortedDataArray removeObjectAtIndex:randomPivotPoint];
+    
+    for (Card *card in unsortedDataArray) {
+
+        if ([Player findCardValue:card] < [Player findCardValue:pivotCard])
+        {
+            [lessArray addObject:card];
+        }
+        else
+        {
+            [greaterArray addObject:card];
+        }
+        
+    }
+    
+    NSMutableArray *sortedArray = [[NSMutableArray alloc]init];
+    [sortedArray addObjectsFromArray:[self quickSort:lessArray]];
+    [sortedArray addObject:pivotCard];
+    [sortedArray addObjectsFromArray:[self quickSort:greaterArray]];
+    return sortedArray;
+}
+
++ (NSUInteger) findCardValue: (Card *)card {
+    NSUInteger suitValue;
+    NSUInteger rankValue;
+    NSUInteger cardValue;
+    NSString *suit = [card.contents  substringFromIndex:[card.contents length]-1];
+    if ([suit isEqualToString:@"♠"]) {
+        suitValue = 8;
+    }
+    else if ([suit isEqualToString:@"♥"]){
+        suitValue = 4;
+    }
+    else if ([suit isEqualToString:@"♣"]){
+        suitValue = 2;
+    }
+    else {
+        suitValue = 0;
+    }
+    NSString *rank;
+    if ([card.contents length]>2){
+        rank = [card.contents substringToIndex:2];
+    }
+    else {
+        rank = [card.contents substringToIndex:1];
+    }
+    if ([rank isEqualToString: @"2"]) {rankValue = 150;}
+    else if ([rank isEqualToString: @"A"]) {rankValue = 140;}
+    else if ([rank isEqualToString: @"K"]) {rankValue = 130;}
+    else if ([rank isEqualToString: @"Q"]) {rankValue = 120;}
+    else if ([rank isEqualToString: @"J"]) {rankValue = 110;}
+    else {rankValue = [rank intValue] * 10;}
+    cardValue = suitValue + rankValue;
+    return cardValue;
+}
+
 
 @end

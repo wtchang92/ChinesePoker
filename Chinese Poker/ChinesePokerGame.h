@@ -15,7 +15,12 @@
 
 @interface ChinesePokerGame : NSObject
 
-- (instancetype)initWithPlayers: (NSInteger)count usingDeck:(Deck *)deck;
+typedef NS_ENUM(NSUInteger, GameMode) {
+    singlePlayer,
+    multiPlayer
+};
+
+- (instancetype)initWithPlayers: (NSInteger)count usingGameMode: (GameMode)mode usingDeck:(Deck *)deck;
 
 @property (nonatomic) NSInteger numOfPlayers;
 
@@ -28,7 +33,8 @@
 - (BOOL) enterPlayToGame: (Player *)player;
 - (void) playerIsAtTurnCallPass;
 @property (nonatomic) NSArray *currentRoundOrder;
-@property (nonatomic) BOOL roundIsActive;
+@property (nonatomic) BOOL gameIsActive;
+@property (strong, nonatomic) GameRound *currentRound;
 
 
 - (void)addCardsToPile:(NSMutableArray *)cardsToAdd atTop:(BOOL)atTop;
@@ -41,5 +47,8 @@
 
 - (NSMutableArray *) showPlayers;
 - (NSArray *) testShowRoundOrder;
+
+- (Player *) getWinnerOfTheGame;
+- (Play *)showPileTopPlay;
 
 @end

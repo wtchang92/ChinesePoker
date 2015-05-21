@@ -15,10 +15,14 @@
 
 @property (nonatomic, strong) NSString *contents;
 
+
 @property (nonatomic, getter = isChosen) BOOL chosen;
 @property (nonatomic, getter = isMatched) BOOL matched;
 
 
 - (int)match:(NSArray *)otherCards;
+- (NSUInteger) findCardValue;
+- (NSString *) findRank;
+- (NSString *) findSuit;
 
 @end
